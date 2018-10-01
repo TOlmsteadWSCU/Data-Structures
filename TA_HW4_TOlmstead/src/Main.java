@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args)
@@ -42,6 +44,17 @@ public class Main {
         str[1][1] = "Output";
         System.out.println(concatenation(str));
         System.out.println("Question 81: ");
+        char[][] chars = new char[2][4];
+        chars[0][0] = 'd';
+        chars[0][1] = 'a';
+        chars[0][2] = 't';
+        chars[0][3] = 'a';
+        chars[1][0] = 's';
+        chars[1][1] = 't';
+        chars[1][2] = 'r';
+        chars[1][3] = 'u';
+        System.out.println(stringCharConcatenation(chars));
+        System.out.println("Question 83: ");
 
     }//main
 
@@ -49,6 +62,42 @@ public class Main {
     {
         return value.length;
     }//numRows
+    public static int sumElements(ArrayList<Integer> arrayList)
+    {
+        int sum = 0;
+        for (int i : arrayList)
+        {
+            sum += i;
+        }
+        //Less efficient way of executing code is below.
+        /*for (int i = 0; i<arrayList.size(); i++)
+        {
+            sum += arrayList.get(i);
+        }*/
+
+        return sum;
+    }
+    public static String[] stringCharConcatenation(char[][] chars)
+    {
+        for (int i=0; i<chars.length; i++)
+        {
+            for (int j=0; j<chars[i].length; j++)
+            {
+                System.out.print(chars[i][j] + " ");
+            }
+            System.out.println("");
+        }//testing output of char 2-D array to make sure it looks the way I want
+
+        String[] str = new String[chars.length];
+        for (int i=0; i<chars.length; i++)
+        {
+            for (int j=0; j<chars[i].length; j++)
+            {
+                str[i] += chars[i][j];
+            }
+        }
+        return str;
+    }//stringCharConcatenation
     public static String concatenation(String str[][])
     {
         String s = "";
